@@ -15,9 +15,13 @@ The function should:
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
 
-function createMenuItem(/*Your code here*/){
-    /*Your code here*/
+// pass 3 params - name price category
+function createMenuItem(name, price, category){
+    const options = {name, price, category};
+    return options;
+    //return an object with the 3 params
 }
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Invoke your function!
@@ -28,8 +32,10 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
-
-
+// not being graded - we are just invoking the function from task 1a 3 times
+console.log('task 1b', createMenuItem('Pizza', 5, 'Lunch'));
+console.log('task 1b', createMenuItem('Eggs', 3, 'Breakfast'));
+console.log('task 1b', createMenuItem('Steak', 8, 'Dinner'));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to the 
@@ -43,13 +49,23 @@ Using the burger object below do the following:
 
   For example: burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2
 */
+
+
 const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  
-}
 
+  discount: function(value){
+    if (value === 'teacher' || value === 'student'){
+      return this.price - this.price * 0.25;
+    }
+    return this.price - this.price * 0.1;
+  }
+  
+  // method called discount and you are giving teachers and students a discount and public a different discount // you need to use 'this' when referencing a key inside of a method - this.price // you are not updating the value of price you are just return the discounted price
+}
+console.log('task2', burger.discount('public'));
 
 
 ///////////////Reviews (MVP)///////////////////
@@ -69,7 +85,7 @@ Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
 
-
+//not being graded - you are just console logging 
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -80,7 +96,7 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
 reviews[7].feedback = 'this place is chill with really cool people, great for getting work done on weekdays';
 console.log(reviews);
 
-
+//skip
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -92,8 +108,14 @@ Write a function that creates an object with name, rating, feedback, add the new
   4. should return the resulting array
 */
 
+// pass array, name, rating, feedback as params
+
 function addReview(/*Your Code Here */){
   /*Your Code Here */
+
+
+
+  //push the object to the end of the array and return the resulting array
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -107,8 +129,12 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
+//recive an array, index
+
 function getReviewByIndex(/*Your code here*/) {
   /*Your code here*/
+
+  // retrun the string "{array[index].name} gave the restaurant a {rating} star review, and their feedback was: {feedback}"
 }
 
 
@@ -125,9 +151,14 @@ Use the getLastReview function below to do the following:
   For example: getLastReview(reviews) would return: "Reyna gave the restaurant a 3.5 star review, and their feedback was: this place is chill with really cool people, great for getting work done on weekdays".
 */
 
+// receive an array as a param
 
 function getLastReview(/*Your code here*/) {
   /*Your code here*/
+/*
+
+*/
+
 } 
 
 
